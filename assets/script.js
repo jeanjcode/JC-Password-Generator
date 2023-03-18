@@ -19,26 +19,41 @@ var upperCasedCharacters = [
 // User input to generate password
 function generatePassword() {
   var passSize = 0
-  var possCharacters = []
+  var possChars = []
 
 
 
 // While loop - user must select password length
-  while (parseInt(passSize) < 8 || parseInt(passSize) >128 || Number.isNaN(parseInt(passSize))){
+while (parseInt(passSize) < 8 || parseInt(passSize) >128 || Number.isNaN(parseInt(passSize))){
     passSize = prompt("Please select a password length between 8 and 128 characters.")
   }
 
 // Prompt user for password options - using conditional statements
-  var upperCaseChoice = confirm("Do you want to include uppercase characters?")
-    if(upperCaseChoice == true){
-     possibleCharacters = possibleCharacters.concat(upperCase)
+//Include uppercase characters?
+var upperCase = confirm("Do you want to include uppercase characters?")
+    if(upperCase == true){
+     possChars = possChars.concat(upperCase)   
+    }
+
+//Include lowercase characters
+var lowerCase = confirm("Do you want to include lowercase characters")
+    if(lowerCase == true){
+     possChars = possChars.concat(lowerCase)
     }
 
 
-  var lowerCaseChoice = confirm("Do you want to include lowercase characters")
-    if(lowerCaseChoice == true){
-     possibleCharacters = possibleCharacters.concat(lowerCase)
+//Include special characters?
+var specialCharacter = confirm("Do you want to include special characters?")
+    if(specialCharacter == true){
+     possChars = possChars.concat(specialCharacters)
     }
+  
+//Include numeric characters?
+var numbers = confirm("Do you want to include numeric characters?")
+    if(numbers == true){
+     possChars = possChars.concat(numbersPass)
+    }
+
 
     return result;
 }
