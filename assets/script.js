@@ -14,30 +14,40 @@ var upperCasedCharacters = [
   'A','B','C','D','E','F','G','H','I', 'J', 'K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 
-// // Function to prompt user for password options
-// function getPasswordOptions() {
-// }
+
 
 // User input to generate password
 function generatePassword() {
   var passSize = 0
   var possCharacters = []
-}
 
 
 
 // While loop - user must select password length
   while (parseInt(passSize) < 8 || parseInt(passSize) >128 || Number.isNaN(parseInt(passSize))){
-    passSize = prompt("Please enter a password with a length between 8 and 128.")
+    passSize = prompt("Please select a password length between 8 and 128 characters.")
   }
 
+// Prompt user for password options - using conditional statements
+  var upperCaseChoice = confirm("Do you want to include uppercase characters?")
+    if(upperCaseChoice == true){
+     possibleCharacters = possibleCharacters.concat(upperCase)
+    }
+
+
+  var lowerCaseChoice = confirm("Do you want to include lowercase characters")
+    if(lowerCaseChoice == true){
+     possibleCharacters = possibleCharacters.concat(lowerCase)
+    }
+
+    return result;
+}
+  
 
 
 
-// // Function for getting a random element from an array
-// function getRandom(arr) {
 
-// }
+
 
 
 
