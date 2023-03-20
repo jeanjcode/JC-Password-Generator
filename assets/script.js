@@ -3,14 +3,14 @@ var specialCharacters = [
   '@', '%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var numbersChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+var lowerCase = [
   'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+var upperCase = [
   'A','B','C','D','E','F','G','H','I', 'J', 'K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 
@@ -20,7 +20,6 @@ var upperCasedCharacters = [
 function generatePassword() {
   var passSize = 0
   var possChars = []
-
 
 
 // While loop - user must select password length
@@ -51,26 +50,19 @@ var specialCharacter = confirm("Do you want to include special characters?")
 //Include numeric characters?
 var numbers = confirm("Do you want to include numeric characters?")
     if(numbers == true){
-     possChars = possChars.concat(numbersPass)
+     possChars = possChars.concat(numbersChars)
     }
 
 
-    return result;
+// For loop - to create a randomized selection 
+var result = ""
+for (var i = 0, n=possChars.length; i<parseInt(passSize); i++) {
+  result += possChars[Math.floor(Math.random()*n)]
 }
-  
 
+return result;
+}
 
-
-
-
-
-
-
-
-
-
-// Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input - displays password
 function writePassword() {
@@ -79,6 +71,12 @@ function writePassword() {
 
   passwordText.value = password;
 }
+
+
+// Get references to the #generate element
+var generateBtn = document.querySelector('#generate');
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
