@@ -29,8 +29,8 @@ while (parseInt(passSize) < 8 || parseInt(passSize) >128 || Number.isNaN(parseIn
 
 // Prompt user for password options - using conditional statements
 //Include uppercase characters?
-var usersLowerCaseUpperCase = confirm("In the next 4 questions, at least one character type should be selected to be included in your password.                                                            Do you want to include uppercase characters?")
-    if(usersLowerCaseUpperCase == true){
+var usersUpperCase = confirm("In the next 4 questions, at least one character type should be selected to be included in your password.                                                            Do you want to include uppercase characters?")
+    if(usersUpperCase == true){
      possChars = possChars.concat(upperCase)   
     }
 
@@ -52,7 +52,11 @@ var usersNumbers = confirm("Do you want to include numeric characters?")
     if(usersNumbers == true){
      possChars = possChars.concat(numbersChars)
     }
-
+    
+    if (!usersUpperCase && !usersLowerCase && !usersCharacters && !usersNumbers) {
+    alert("No character type was selected. Please try again.");
+    return "";
+  }
 
 // For loop - to create a randomized selection 
 var result = ""
