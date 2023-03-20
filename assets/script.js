@@ -29,27 +29,27 @@ while (parseInt(passSize) < 8 || parseInt(passSize) >128 || Number.isNaN(parseIn
 
 // Prompt user for password options - using conditional statements
 //Include uppercase characters?
-var upperCase = confirm("Do you want to include uppercase characters?")
-    if(upperCase == true){
+var usersLowerCaseUpperCase = confirm("In the next 4 questions, at least one character type should be selected to be included in your password.                                                            Do you want to include uppercase characters?")
+    if(usersLowerCaseUpperCase == true){
      possChars = possChars.concat(upperCase)   
     }
 
 //Include lowercase characters
-var lowerCase = confirm("Do you want to include lowercase characters")
-    if(lowerCase == true){
+var usersLowerCase = confirm("Do you want to include lowercase characters")
+    if(usersLowerCase == true){
      possChars = possChars.concat(lowerCase)
     }
 
 
 //Include special characters?
-var specialCharacter = confirm("Do you want to include special characters?")
-    if(specialCharacter == true){
+var usersCharacters = confirm("Do you want to include special characters?")
+    if(usersCharacters == true){
      possChars = possChars.concat(specialCharacters)
     }
   
 //Include numeric characters?
-var numbers = confirm("Do you want to include numeric characters?")
-    if(numbers == true){
+var usersNumbers = confirm("Do you want to include numeric characters?")
+    if(usersNumbers == true){
      possChars = possChars.concat(numbersChars)
     }
 
@@ -64,13 +64,16 @@ return result;
 }
 
 
+
 // Write password to the #password input - displays password
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
+
+
 
 
 // Get references to the #generate element
