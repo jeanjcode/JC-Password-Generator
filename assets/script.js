@@ -52,6 +52,7 @@ var usersNumbers = confirm("Do you want to include numeric characters?")
     if(usersNumbers == true){
      possChars = possChars.concat(numbersChars)
     }
+
     
     if (!usersUpperCase && !usersLowerCase && !usersCharacters && !usersNumbers) {
     alert("No character type was selected. Please try again.");
